@@ -5,32 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Votre Nom</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Bienvenue sur mon portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="about">
-        <h2>À propos</h2>
-        <p>Une brève description de vous et de vos compétences.</p>
-    </section>
-    <section id="projects">
-        <h2>Projets</h2>
-        <ul>
-            <li><a href="https://github.com/votre-utilisateur/projet-1">Projet 1</a></li>
-            <li><a href="https://github.com/votre-utilisateur/projet-2">Projet 2</a></li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email : <a href="mailto:votre.email@example.com">votre.email@example.com</a></p>
-    </section>
+    <div id="Personnal-Information">
+        <div id="photo">
+            <img id="profil" src="image/photo_presentation.png" alt="photo de présentation"/>
+        </div>
+        <p id="name">Pruvost Paul</p>
+        <div id="parcours">
+            Etudiant en Licence 3 d'informatique
+        </div>
+        
+        <div id="separation"></div>
+        
+        <div id="email" class="infos">
+            <img class="icone" src="image/mail.png" alt="mail">
+            <p class="icone">EMAIL</p>
+            <p class="infos">paulpruvost26800@gmail.com</p>
+        </div>
+        
+        <div id="telephone" class="infos">
+            <img class="icone" src="image/telephone.png" alt="mail">
+            <p class="icone">PHONE</p>
+            <p class="infos">+33783536431</p>
+        </div>
+        
+        <div id="localisation" class="infos">
+            <img class="icone" src="image/addresse.png" alt="mail">
+            <p class="icone">LOCATION</p>
+            <p class="infos">Comines-Warneton, Wallonie, Belgique</p> 
+        </div>
+    </div>
 </body>
 </html>

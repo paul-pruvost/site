@@ -1,15 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    background-color: rgba(3, 3, 3, 0.952);
+    height: 100%;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+html {
+    height: auto;
 }
 
 nav ul {
@@ -26,3 +22,80 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
 }
+
+#Personnal-Information {
+    color:#fff;
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(29, 29, 29);
+    text-align: center;
+    position: relative;
+    margin-left:5%;
+    margin-top: 5%;
+}
+
+p#name{
+    font-size: larger;
+}
+
+div#photo{
+    margin-top: 20%;
+    border: 0px solid black;
+    border-radius: 15px;
+}
+
+img#profil{
+    width: 120px;
+    border: 0.5px solid black;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+div#parcours{
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: #5554;
+    border:0px solid black;
+    border-radius: 20px;
+    font-size: small;
+    padding: 5%;
+}
+
+div#separation{
+    margin-top: 20%;
+    border: 1px solid rgb(48, 48, 48);
+    margin: 15%;
+}
+
+div.infos {
+    width: 70%;
+    align-items: center; /* Centre verticalement les éléments alignés horizontalement */
+    margin: 30% auto;
+}
+
+img.icone {
+    max-width: 20%;
+    height: auto;
+    border-radius: 15px;
+}
+
+p.icone {
+    font-size: 12px;
+    margin: 0;
+}
+
+p.infos {
+    margin: 0;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+div.infos:hover{
+    background-color: #2b2b2b;
+    border: 0px solid black;
+    border-radius:15px;
+}
+
+
+
