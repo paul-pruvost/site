@@ -1,52 +1,49 @@
+html{
+    height: 100vh;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: rgba(3, 3, 3, 0.952);
-    height: 100%;
-}
-
-html {
-    height: auto;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
 }
 
 #Personnal-Information {
-    color:#fff;
-    width: 30%;
-    border: 1px solid black;
+    color: #fff;
+    width: 20%;
     border-radius: 15px;
     background-color: rgb(29, 29, 29);
     text-align: center;
     position: relative;
-    margin-left:5%;
-    margin-top: 5%;
+    margin-left: 5%;
+    margin-top: 2%;
+    padding: 0.5%;
 }
+
+#Personnal-Information::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(3, 3, 3, 0.952), rgb(104, 104, 3));
+    border-radius: 15px;
+}
+
 
 p#name{
     font-size: larger;
 }
 
 div#photo{
-    margin-top: 20%;
+    margin-top: 10%;
     border: 0px solid black;
     border-radius: 15px;
 }
 
 img#profil{
-    width: 120px;
+    width: 90px;
     border: 0.5px solid black;
     border-radius: 20px;
     object-fit: contain;
@@ -63,15 +60,16 @@ div#parcours{
 }
 
 div#separation{
-    margin-top: 20%;
+    margin-top: 10%;
     border: 1px solid rgb(48, 48, 48);
-    margin: 15%;
+    margin-right: 15%;
+    margin-left: 15%;
 }
 
 div.infos {
     width: 70%;
     align-items: center; /* Centre verticalement les éléments alignés horizontalement */
-    margin: 30% auto;
+    margin: 12%;
 }
 
 img.icone {
@@ -89,12 +87,17 @@ p.infos {
     margin: 0;
     font-size: 11px;
     margin-top: 5px;
+    color: #fff;
 }
 
 div.infos:hover{
     background-color: #2b2b2b;
     border: 0px solid black;
     border-radius:15px;
+}
+
+a.infos{
+    color: #fff;
 }
 
 
