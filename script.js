@@ -28,16 +28,15 @@ buttons.forEach(button => {
     });
 });
 
-let allId = ["me", "resume", "projects"];
+let allId = ["resume", "projects"];
 
 
 document.addEventListener("DOMContentLoaded", () => {
     let currentId = "me";
-    const allId = ["me", "resume", "projects"];
 
     const toggleVisibility = (nextId) => {
-        const currentSection = document.getElementById(currentId).childNodes;
         const nextSection = document.getElementById(nextId).childNodes;
+        const currentSection = document.getElementById(currentId).childNodes;
 
         currentSection.forEach(child => {
             if (child.nodeType === 1 && child.tagName !== "BUTTON") {
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const aboutButton = document.getElementById("aboutButton");
     const resumeButton = document.getElementById("resumeButton");
-    const projectsButton = document.getElementById("projectsButton");
+    const projectsButton = document.getElementById("projectButton");
 
     aboutButton.addEventListener("click", () => toggleVisibility("me"));
     resumeButton.addEventListener("click", () => toggleVisibility("resume"));
@@ -68,3 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 aboutButton.click();
+
+allId.forEach(section => {
+    let elt = document.getElementById(section).childNodes;
+    elt.forEach(child => {
+        if (child.nodeType === 1 && child.tagName !== "BUTTON") {
+            child.style.opacity = 0;
+        };
+    })
+});

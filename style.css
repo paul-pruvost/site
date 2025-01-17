@@ -213,14 +213,3 @@ p.textInterests{
     margin-left: 3%;
     color: rgb(182, 182, 182);
 }
-
-#titreResume{
-    width: 20%;
-    bottom: 1%;
-    margin: 0%;
-    margin-left: 7%;
-    margin-bottom: 4%;
-    text-align: left;
-    position: relative;
-    z-index: 4;
-}
