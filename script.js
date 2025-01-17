@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
         me.forEach(child => {
             if (child.nodeType === 1 && child.id != "button"){
                 child.style.opacity = "1";
-                child.style.transition = "opacity 1s ease";      
+                child.style.transition = "transform 1s ease, opacity 1s ease";  
+                child.style.transform = "translateX(0%)";    
             }
         });
         resume.forEach(child => {
@@ -52,7 +53,8 @@ document.addEventListener("DOMContentLoaded", function() {
         me.forEach(child => {
             if (child.nodeType === 1 && child.id != "button"){   
                 child.style.opacity = "0";
-                child.style.transition = "opacity 1s ease";     
+                child.style.transition = "transform 1s ease, opacity 1s ease";
+                child.style.transform = "translateX(100%)";  
             }
         });
         resume.forEach(child => {
