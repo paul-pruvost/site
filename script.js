@@ -14,7 +14,7 @@ phone.addEventListener("click", () => {
 });
 
 const buttons = document.querySelectorAll(".button");
-const aboutButton = document.getElementById("about");
+const aboutButton = document.getElementById("aboutButton");
 const resumeButton = document.getElementById("resumeButton");
 
 buttons.forEach(button => {
@@ -28,44 +28,43 @@ buttons.forEach(button => {
     });
 });
 
+let allId = ["me", "resume", "projects"];
 
-document.addEventListener("DOMContentLoaded", function() {
-    const me = document.getElementById("me").childNodes;
-    const resume = document.getElementById("resume").childNodes;
 
-    const showAbout = () => {
-        me.forEach(child => {
-            if (child.nodeType === 1 && child.id != "button"){
-                child.style.opacity = "1";
-                child.style.transition = "transform 1s ease, opacity 1s ease";  
-                child.style.transform = "translateX(0%)";    
-            }
-        });
-        resume.forEach(child => {
-            if (child.nodeType === 1 && child.id != "button"){
-                child.style.opacity = "0";
-                child.style.transition = "opacity 1s ease";        
-            }
-        })
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    let currentId = "me";
+    const allId = ["me", "resume", "projects"];
 
-    const showResume = () => {
-        me.forEach(child => {
-            if (child.nodeType === 1 && child.id != "button"){   
-                child.style.opacity = "0";
+    const toggleVisibility = (nextId) => {
+        const currentSection = document.getElementById(currentId).childNodes;
+        const nextSection = document.getElementById(nextId).childNodes;
+
+        currentSection.forEach(child => {
+            if (child.nodeType === 1 && child.tagName !== "BUTTON") {
+                child.style.opacity = 0;
                 child.style.transition = "transform 1s ease, opacity 1s ease";
-                child.style.transform = "translateX(100%)";  
+                child.style.transform = "translateX(100%)";
             }
         });
-        resume.forEach(child => {
-            if (child.nodeType === 1 && child.id != "button"){
-                child.style.opacity = "1";
-                child.style.transition = "opacity 1s ease";        
-            }
-        })
-    }
 
-    aboutButton.addEventListener("click", showAbout);
-    resumeButton.addEventListener("click", showResume);
-    aboutButton.click();
+        nextSection.forEach(child => {
+            if (child.nodeType === 1 && child.tagName !== "BUTTON") {
+                child.style.opacity = 1;
+                child.style.transition = "transform 1s ease, opacity 1s ease";
+                child.style.transform = "translateX(0%)";
+            }
+        });
+
+        currentId = nextId;
+    };
+
+    const aboutButton = document.getElementById("aboutButton");
+    const resumeButton = document.getElementById("resumeButton");
+    const projectsButton = document.getElementById("projectsButton");
+
+    aboutButton.addEventListener("click", () => toggleVisibility("me"));
+    resumeButton.addEventListener("click", () => toggleVisibility("resume"));
+    projectsButton.addEventListener("click", () => toggleVisibility("projects"));
+
 });
+aboutButton.click();
