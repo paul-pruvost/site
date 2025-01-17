@@ -13,7 +13,6 @@ div#container{
     width: 67%;
     border-radius: 15px;
     background-color: rgb(29, 29, 29);
-    text-align: center;
     position: relative;
     margin-left: 5%;
     margin-top: 4%;
@@ -37,6 +36,7 @@ div#me{
 
 div#resume{
     position:absolute;
+    opacity: 0;
 }
 
 #Personnal-Information {
@@ -100,7 +100,7 @@ div#separation{
 
 div.infos {
     width: 70%;
-    align-items: center; /* Centre verticalement les éléments alignés horizontalement */
+    align-items: center;
     margin: 12%;
 }
 
@@ -137,11 +137,12 @@ div#button{
     border: 1px solid rgb(245, 180, 2);
     border-radius: 15px;
     width: 20%;
-    left: 80%;
+    left: 79.9%;
+    display:flex;
     position: relative;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    height: 3%;
+    height: 5%;
+    align-items: center;
+    justify-content: center;
 }
 
 button{
@@ -160,13 +161,16 @@ h2.sousTitre{
     bottom: 1%;
     margin: 0%;
     margin-left: 7%;
+    margin-bottom: 4%;
     text-align: left;
     position: relative;
 }
 
 p#aboutNow{
-    margin: 5%;
-    padding: 2%;
+    margin-left: 5%;
+    margin-bottom: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
     width: auto;
     text-align:left;
     position: relative;
@@ -177,11 +181,40 @@ div#separation2{
     border: 1.5px solid rgb(245, 180, 2);
     margin-right: 60%;
     margin-left: 7%;
-    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+div.interests{
+    margin-left: 7%;
+    display:flex;
+    margin-bottom: 6%;
+    width: 100%;
+    position: absolute;
+}
+
+div#games{
+    bottom: -73%;
+}
+
+div#astronomy{
+    bottom: -76%;
+    left: 46%;
+}
+
+div#code{
+    left: 46%;
 }
 
 img.imgInterests{
     width: 7%;
-    margin-top: 2%;
-    transform: translateX(-570%);
+}
+
+img#code{
+    object-fit: contain;
+}
+
+p.textInterests{
+    width: 30%;
+    margin-left: 3%;
+    color: rgb(182, 182, 182);
 }

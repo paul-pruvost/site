@@ -14,8 +14,8 @@ phone.addEventListener("click", () => {
 });
 
 const buttons = document.querySelectorAll(".button");
-const aboutButton = document.getElementById("first");
-const resumeButton = document.getElementById("second");
+const aboutButton = document.getElementById("about");
+const resumeButton = document.getElementById("resumeButton");
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
