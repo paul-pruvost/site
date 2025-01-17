@@ -36,25 +36,29 @@ document.addEventListener("DOMContentLoaded", function() {
     const showAbout = () => {
         me.forEach(child => {
             if (child.nodeType === 1 && child.id != "button"){
-                child.style.visibility = "visible";        
+                child.style.opacity = "1";
+                child.style.transition = "opacity 1s ease";      
             }
         });
         resume.forEach(child => {
             if (child.nodeType === 1 && child.id != "button"){
-                child.style.visibility = "hidden";        
+                child.style.opacity = "0";
+                child.style.transition = "opacity 1s ease";        
             }
         })
     }
 
     const showResume = () => {
         me.forEach(child => {
-            if (child.nodeType === 1 && child.id != "button"){
-                child.style.visibility = "hidden";        
+            if (child.nodeType === 1 && child.id != "button"){   
+                child.style.opacity = "0";
+                child.style.transition = "opacity 1s ease";     
             }
         });
         resume.forEach(child => {
             if (child.nodeType === 1 && child.id != "button"){
-                child.style.visibility = "visible";        
+                child.style.opacity = "1";
+                child.style.transition = "opacity 1s ease";        
             }
         })
     }
