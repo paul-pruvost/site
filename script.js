@@ -28,6 +28,7 @@ buttons.forEach(button => {
     });
 });
 
+
 document.addEventListener("DOMContentLoaded", function() {
     const me = document.getElementById("me").childNodes;
     const resume = document.getElementById("resume").childNodes;
