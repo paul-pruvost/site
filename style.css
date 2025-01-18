@@ -7,11 +7,26 @@ body {
 div#container{
     color: #fff;
     width: 67%;
+    height: 85vh;
     border-radius: 15px;
     background-color: rgb(29, 29, 29);
     position: relative;
     margin-left: 5%;
     margin-top: 4%;
+}
+
+div#me{
+    position: absolute;
+}
+
+div#resume{
+    position: relative;
+}
+
+div#projects{
+    position: relative;
+    bottom: 75%;
+
 }
 
 #container::before {
@@ -24,14 +39,6 @@ div#container{
     z-index: -1;
     background: linear-gradient(to top, rgba(3, 3, 3, 0.952), rgb(245, 180, 2));
     border-radius: 15px;
-}
-
-div#me{
-    position: absolute;
-}
-
-div#resume{
-    position:absolute;
 }
 
 #Personnal-Information {
@@ -152,9 +159,8 @@ button:hover{
 }
 
 h2.sousTitre{
-    width: 20%;
+    width: auto;
     bottom: 1%;
-    margin: 0%;
     margin-left: 7%;
     margin-bottom: 4%;
     text-align: left;
@@ -172,7 +178,7 @@ p#aboutNow{
     color: rgb(182, 182, 182);
 }
 
-div#separation2{
+div.separation2{
     border: 1.5px solid rgb(245, 180, 2);
     margin-right: 60%;
     margin-left: 7%;
@@ -188,11 +194,11 @@ div.interests{
 }
 
 div#games{
-    bottom: -73%;
+    bottom: -75%;
 }
 
 div#astronomy{
-    bottom: -76%;
+    bottom: -77%;
     left: 46%;
 }
 
