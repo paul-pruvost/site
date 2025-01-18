@@ -219,3 +219,41 @@ p.textInterests{
     margin-left: 3%;
     color: rgb(182, 182, 182);
 }
+
+.section {
+    padding: 20px;
+  }
+
+  .about {
+    background-color: #2b2b2b;
+    color: white;
+    padding: 20px;
+    text-align: justify;
+  }
+
+  .experience, .skills {
+    background-color: rgba(85, 84, 84, 0.5);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .experience h3, .skills h3 {
+    color: rgb(245, 180, 2);
+  }
+
+  footer {
+    background-color: #000;
+    text-align: center;
+    padding: 10px;
+    color: white;
+  }
+
+  a {
+    color: rgb(245, 180, 2);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }

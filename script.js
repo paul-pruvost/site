@@ -35,26 +35,21 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentId = "me";
 
     const toggleVisibility = (nextId) => {
-        const nextSection = document.getElementById(nextId).childNodes;
-        const currentSection = document.getElementById(currentId).childNodes;
+        const nextSection = document.getElementById(nextId);
+        const currentSection = document.getElementById(currentId);
 
-        currentSection.forEach(child => {
-            if (child.nodeType === 1 && child.tagName !== "BUTTON") {
-                child.style.opacity = 0;
-                child.style.transition = "transform 1s ease, opacity 1s ease";
-                child.style.transform = "translateX(100%)";
-            }
-        });
+        if (currentId !== nextId){
+            currentSection.style.opacity = 0;
+            currentSection.style.transition = "transform 1s ease, opacity 1s ease"
+            currentSection.style.transform = "translateX(100%)";
 
-        nextSection.forEach(child => {
-            if (child.nodeType === 1 && child.tagName !== "BUTTON") {
-                child.style.opacity = 1;
-                child.style.transition = "transform 1s ease, opacity 1s ease";
-                child.style.transform = "translateX(0%)";
-            }
-        });
-
-        currentId = nextId;
+            setTimeout(() => {
+                nextSection.style.opacity = 1;
+                nextSection.style.transition = "transform 1s ease, opacity 1s ease";
+                nextSection.style.transform = "translateX(0%)";
+            }, 800);
+        };
+    currentId = nextId;
     };
 
     const aboutButton = document.getElementById("aboutButton");
@@ -69,10 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 aboutButton.click();
 
 allId.forEach(section => {
-    let elt = document.getElementById(section).childNodes;
-    elt.forEach(child => {
-        if (child.nodeType === 1 && child.tagName !== "BUTTON") {
-            child.style.opacity = 0;
-        };
-    })
+    let elt = document.getElementById(section)
+    elt.style.opacity = 0;
+    elt.style.transform = "translateX(100%)";
 });
