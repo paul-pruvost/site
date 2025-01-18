@@ -129,6 +129,10 @@ p.infos {
     color: #fff;
 }
 
+p.infos:hover{
+    text-decoration: underline;
+}
+
 div.infos:hover{
     background-color: #2b2b2b;
     border: 0px solid black;
@@ -332,5 +336,9 @@ p.download{
     top: 80%;
     left: 34%;
     color: rgb(255, 251, 251);
-    
+    z-index: 3;
+}
+
+p.download:hover{
+    color:white;
 }
