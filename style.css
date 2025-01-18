@@ -1,3 +1,8 @@
+html {
+    position: fixed;
+    width: 100vw;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: rgba(3, 3, 3, 0.952);
@@ -25,7 +30,7 @@ div#resume{
 
 div#projects{
     position: relative;
-    bottom: 75%;
+    bottom: 118%;
 
 }
 
@@ -224,36 +229,108 @@ p.textInterests{
     padding: 20px;
   }
 
-  .about {
+.about {
     background-color: #2b2b2b;
     color: white;
     padding: 20px;
     text-align: justify;
-  }
+}
 
-  .experience, .skills {
+.experience, .skills {
     background-color: rgba(85, 84, 84, 0.5);
     margin: 10px;
     padding: 20px;
     border-radius: 5px;
-  }
+}
 
-  .experience h3, .skills h3 {
+.experience h3, .skills h3 {
     color: rgb(245, 180, 2);
-  }
+}
 
-  footer {
+footer {
     background-color: #000;
     text-align: center;
     padding: 10px;
     color: white;
-  }
+}
 
-  a {
+a {
     color: rgb(245, 180, 2);
     text-decoration: none;
-  }
+}
 
-  a:hover {
+a:hover {
     text-decoration: underline;
-  }
+}
+
+.resume-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.resume-list li {
+    margin-bottom: 15px;
+}
+
+.sectionTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(245, 180, 2);
+    margin-bottom: 10px;
+}
+
+#resume ul {
+    padding-left: 20px;
+}
+
+#resume li strong {
+    color: rgb(245, 180, 2);
+}
+
+div#zombicide{
+    position: relative;
+}
+
+img#zombicide{
+    width: 25%;
+    margin-top: 5%;
+}
+
+div.projet{
+    margin-left: 7%;
+    display:flex;
+    margin-bottom: 6%;
+    width: 100%;
+    position: absolute;
+}
+
+button#nextButton{
+    width: 10%;
+    position: absolute;
+    top: 105%;
+    left: 85%; 
+}
+
+div#simulateur{
+    position: absolute;
+    top: 40.4%;
+    opacity: 0;
+}
+
+p.projectSummary{
+    position: absolute;
+    width: 50%;
+    top: 25%;
+    left: 34%;
+    color: rgb(182, 182, 182);
+}
+
+p.download{
+    position: absolute;
+    width: 50%;
+    top: 80%;
+    left: 34%;
+    color: rgb(255, 251, 251);
+    
+}

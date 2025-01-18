@@ -28,28 +28,34 @@ buttons.forEach(button => {
     });
 });
 
-let allId = ["resume", "projects"];
-
+const allId = ["resume", "projects"];
+let isActive = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     let currentId = "me";
 
     const toggleVisibility = (nextId) => {
-        const nextSection = document.getElementById(nextId);
-        const currentSection = document.getElementById(currentId);
+        if (!isActive){
+            isActive = true;
+            const nextSection = document.getElementById(nextId);
+            const currentSection = document.getElementById(currentId);
 
-        if (currentId !== nextId){
-            currentSection.style.opacity = 0;
-            currentSection.style.transition = "transform 1s ease, opacity 1s ease"
-            currentSection.style.transform = "translateX(100%)";
+            if (currentId !== nextId){
+                currentSection.style.opacity = 0;
+                currentSection.style.transition = "transform 1s ease, opacity 1s ease"
+                currentSection.style.transform = "translateX(100%) scale(0.5)";
 
-            setTimeout(() => {
-                nextSection.style.opacity = 1;
-                nextSection.style.transition = "transform 1s ease, opacity 1s ease";
-                nextSection.style.transform = "translateX(0%)";
-            }, 800);
+                setTimeout(() => {
+                    nextSection.style.opacity = 1;
+                    nextSection.style.transition = "transform 1s ease, opacity 1s ease";
+                    nextSection.style.transform = "translateX(0%) scale(1)";
+                }, 800);
+            };
+            currentId = nextId;
         };
-    currentId = nextId;
+        setTimeout(() => {
+            isActive = false;
+        }, 800);
     };
 
     const aboutButton = document.getElementById("aboutButton");
@@ -59,12 +65,23 @@ document.addEventListener("DOMContentLoaded", () => {
     aboutButton.addEventListener("click", () => toggleVisibility("me"));
     resumeButton.addEventListener("click", () => toggleVisibility("resume"));
     projectsButton.addEventListener("click", () => toggleVisibility("projects"));
-
 });
 aboutButton.click();
 
 allId.forEach(section => {
     let elt = document.getElementById(section)
     elt.style.opacity = 0;
-    elt.style.transform = "translateX(100%)";
+    elt.style.transform = "translateX(100%) scale(0.5)";
 });
+
+const allProjects = ["zombicide", "simulateur"];
+const nextButton = document.getElementById("nextButton");
+let i = 0;
+
+const toggleVisibilityProjects = () => {
+    document.getElementById(allProjects[i]).style.opacity = 0;
+    i = (i+1)%(allProjects.length);
+    document.getElementById(allProjects[i]).style.opacity = 1;
+}
+
+nextButton.addEventListener("click", toggleVisibilityProjects);
