@@ -9,6 +9,13 @@ body {
     display:flex;
 }
 
+p#complete{
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    height: 5%;
+}
+
 div#container{
     color: #fff;
     width: 67%;
@@ -331,7 +338,7 @@ img#railroad{
 
 div#simulateur{
     position: absolute;
-    top: 40.4%;
+    top: 45%;
     opacity: 0;
 }
 
