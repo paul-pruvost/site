@@ -320,7 +320,12 @@ button#nextButton{
     width: 10%;
     position: absolute;
     top: 105%;
-    left: 85%; 
+    left: 83%;
+    padding: 0.5%;
+    border: 1px solid rgb(245, 180, 2);
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
 div#railroadDiv{

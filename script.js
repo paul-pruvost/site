@@ -37,8 +37,16 @@ allId.slice(1, allId.length).forEach(section => {
     elt.style.transform = "translateX(100%) scale(0.5)";
 });
 
+const aboutButton = document.getElementById("aboutButton");
+aboutButton.style.color = "rgb(245, 180, 2)";
+const resumeButton = document.getElementById("resumeButton");
+const projectsButton = document.getElementById("projectButton");
+
+const allButtons = {"me":aboutButton, "resume":resumeButton, "projects":projectsButton};
+
 const toggleVisibility = (nextId) => {
     allId.forEach(section => {
+        allButtons[section].disabled = true;
         currentId = nextId;
         if (section !== currentId){
             const otherSection = document.getElementById(section);
@@ -53,11 +61,13 @@ const toggleVisibility = (nextId) => {
             thisSection.style.transition = "transform 1s ease, opacity 1s ease";
         }
     });
-};
 
-const aboutButton = document.getElementById("aboutButton");
-const resumeButton = document.getElementById("resumeButton");
-const projectsButton = document.getElementById("projectButton");
+    setTimeout(() => {
+        allId.forEach(section => {
+            allButtons[section].disabled = false;
+        });
+    }, 1000);
+};
 
 aboutButton.addEventListener("click", () => toggleVisibility("me"));
 resumeButton.addEventListener("click", () => toggleVisibility("resume"));
@@ -68,6 +78,13 @@ const nextButton = document.getElementById("nextButton");
 let i = 0;
 
 const toggleVisibilityProjects = () => {
+    nextButton.style.transform = "scale(0.8)";
+    nextButton.style.transition = "transform 0.5s ease";
+
+    nextButton.addEventListener("transitionend", function styleNextButton() {
+        nextButton.style.transform = "scale(1)";
+        nextButton.style.transition = "transform 0.5s ease";
+    })
     nextButton.disabled = true;
     const currentProject = document.getElementById(allProjects[i]);
     
