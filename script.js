@@ -83,7 +83,13 @@ const toggleVisibilityProjects = () => {
     
     currentProject.style.opacity = 0;
     currentProject.style.transition = "transform 1s ease, opacity 1s ease";
-    currentProject.style.transform = "translateX(100%) scale(0.5)";
+    currentProject.style.transform = "translateX(100%) scale(0.3)";
+
+    currentProject.addEventListener("transitionend", function handleTransitionEnd(event) {
+        currentProject.style.transition = "none";
+        currentProject.style.transform = "translateX(-100%) scale(0.3)";
+        currentProject.removeEventListener("transitionend", handleTransitionEnd);
+    });
     i = (i+1)%(allProjects.length);
 
     const nextProject = document.getElementById(allProjects[i]);
@@ -94,7 +100,7 @@ const toggleVisibilityProjects = () => {
 allProjects.slice(1, allProjects.length).forEach(section => {
     let elt = document.getElementById(section)
     elt.style.opacity = 0;
-    elt.style.transform = "translateX(100%) scale(0.5)";
+    elt.style.transform = "translateX(-100%) scale(0.3)";
 });
 
 nextButton.addEventListener("click", toggleVisibilityProjects);
