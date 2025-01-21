@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (currentId !== nextId){
                 currentSection.style.opacity = 0;
-                currentSection.style.transition = "transform 1s ease, opacity 1s ease"
+                currentSection.style.transition = "transform 1s ease, opacity 1s ease";
                 currentSection.style.transform = "translateX(100%) scale(0.5)";
 
                 setTimeout(() => {
@@ -74,14 +74,27 @@ allId.forEach(section => {
     elt.style.transform = "translateX(100%) scale(0.5)";
 });
 
-const allProjects = ["zombicide", "simulateur"];
+const allProjects = ["zombicide", "railroadDiv", "simulateur"];
 const nextButton = document.getElementById("nextButton");
 let i = 0;
 
 const toggleVisibilityProjects = () => {
-    document.getElementById(allProjects[i]).style.opacity = 0;
+    const currentProject = document.getElementById(allProjects[i]);
+    
+    currentProject.style.opacity = 0;
+    currentProject.style.transition = "transform 1s ease, opacity 1s ease";
+    currentProject.style.transform = "translateX(100%) scale(0.5)";
     i = (i+1)%(allProjects.length);
+
+    const nextProject = document.getElementById(allProjects[i]);
     document.getElementById(allProjects[i]).style.opacity = 1;
+    nextProject.style.transition = "transform 1s ease, opacity 1s ease";
+    nextProject.style.transform = "translateX(0%) scale(1)";
 }
+allProjects.slice(1, allProjects.length).forEach(section => {
+    let elt = document.getElementById(section)
+    elt.style.opacity = 0;
+    elt.style.transform = "translateX(100%) scale(0.5)";
+});
 
 nextButton.addEventListener("click", toggleVisibilityProjects);
