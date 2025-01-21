@@ -79,6 +79,7 @@ const nextButton = document.getElementById("nextButton");
 let i = 0;
 
 const toggleVisibilityProjects = () => {
+    nextButton.disabled = true;
     const currentProject = document.getElementById(allProjects[i]);
     
     currentProject.style.opacity = 0;
@@ -88,6 +89,7 @@ const toggleVisibilityProjects = () => {
     currentProject.addEventListener("transitionend", function handleTransitionEnd(event) {
         currentProject.style.transition = "none";
         currentProject.style.transform = "translateX(-100%) scale(0.3)";
+        nextButton.disabled = false;
         currentProject.removeEventListener("transitionend", handleTransitionEnd);
     });
     i = (i+1)%(allProjects.length);
