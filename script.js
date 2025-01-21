@@ -14,8 +14,6 @@ phone.addEventListener("click", () => {
 });
 
 const buttons = document.querySelectorAll(".button");
-const aboutButton = document.getElementById("aboutButton");
-const resumeButton = document.getElementById("resumeButton");
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -28,51 +26,48 @@ buttons.forEach(button => {
     });
 });
 
-const allId = ["resume", "projects"];
-let isActive = false;
 
-document.addEventListener("DOMContentLoaded", () => {
-    let currentId = "me";
 
-    const toggleVisibility = (nextId) => {
-        if (!isActive){
-            isActive = true;
-            const nextSection = document.getElementById(nextId);
-            const currentSection = document.getElementById(currentId);
+const allId = ["me", "resume", "projects"];
+let currentId = allId[0];
 
-            if (currentId !== nextId){
-                currentSection.style.opacity = 0;
-                currentSection.style.transition = "transform 1s ease, opacity 1s ease";
-                currentSection.style.transform = "translateX(100%) scale(0.5)";
+const toggleVisibility = (nextId) => {
+    const nextSection = document.getElementById(nextId);
+    const currentSection = document.getElementById(currentId);
 
-                setTimeout(() => {
-                    nextSection.style.opacity = 1;
-                    nextSection.style.transition = "transform 1s ease, opacity 1s ease";
-                    nextSection.style.transform = "translateX(0%) scale(1)";
-                }, 800);
-            };
-            currentId = nextId;
-        };
-        setTimeout(() => {
-            isActive = false;
-        }, 800);
+    if (currentId !== nextId){
+        currentSection.style.opacity = 0;
+        currentSection.style.transition = "transform 1s ease, opacity 1s ease";
+        currentSection.style.transform = "translateX(100%) scale(0.5)";
+
+        nextSection.style.opacity = 1;
+        nextSection.style.transition = "transform 1s ease, opacity 1s ease";
+        nextSection.style.transform = "translateX(0%) scale(1)";
     };
+    currentId = nextId;
+};
 
-    const aboutButton = document.getElementById("aboutButton");
-    const resumeButton = document.getElementById("resumeButton");
-    const projectsButton = document.getElementById("projectButton");
+const aboutButton = document.getElementById("aboutButton");
+const resumeButton = document.getElementById("resumeButton");
+const projectsButton = document.getElementById("projectButton");
 
-    aboutButton.addEventListener("click", () => toggleVisibility("me"));
-    resumeButton.addEventListener("click", () => toggleVisibility("resume"));
-    projectsButton.addEventListener("click", () => toggleVisibility("projects"));
-});
-aboutButton.click();
+aboutButton.addEventListener("click", toggleVisibility("me"));
+resumeButton.addEventListener("click", toggleVisibility("resume"));
+projectsButton.addEventListener("click", toggleVisibility("projects"));
 
-allId.forEach(section => {
+// aboutButton.addEventListener("click", toggleVisibility("me"));
+// resumeButton.addEventListener("click", toggleVisibility("resume"));
+// projectsButton.addEventListener("click", toggleVisibility("projects"));
+
+allId.slice(1, allId.length-1).forEach(section => {
     let elt = document.getElementById(section)
     elt.style.opacity = 0;
     elt.style.transform = "translateX(100%) scale(0.5)";
 });
+
+//aboutButton.click();
+
+
 
 const allProjects = ["zombicide", "railroadDiv", "simulateur"];
 const nextButton = document.getElementById("nextButton");
@@ -86,19 +81,21 @@ const toggleVisibilityProjects = () => {
     currentProject.style.transition = "transform 1s ease, opacity 1s ease";
     currentProject.style.transform = "translateX(100%) scale(0.3)";
 
-    currentProject.addEventListener("transitionend", function handleTransitionEnd(event) {
+    currentProject.addEventListener("transitionend", function handleTransitionProjectEnd(event) {
         currentProject.style.transition = "none";
         currentProject.style.transform = "translateX(-100%) scale(0.3)";
         nextButton.disabled = false;
-        currentProject.removeEventListener("transitionend", handleTransitionEnd);
+        currentProject.removeEventListener("transitionend", handleTransitionProjectEnd);
     });
     i = (i+1)%(allProjects.length);
 
     const nextProject = document.getElementById(allProjects[i]);
-    document.getElementById(allProjects[i]).style.opacity = 1;
+    nextProject.style.opacity = 1;
     nextProject.style.transition = "transform 1s ease, opacity 1s ease";
     nextProject.style.transform = "translateX(0%) scale(1)";
-}
+};
+
+
 allProjects.slice(1, allProjects.length).forEach(section => {
     let elt = document.getElementById(section)
     elt.style.opacity = 0;
