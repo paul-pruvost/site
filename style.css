@@ -316,10 +316,30 @@ button#nextButton{
     left: 85%; 
 }
 
+div#railroadDiv{
+    position: absolute;
+    top: 40.4%;
+    opacity: 0;
+}
+
+img#railroad{
+    position: relative;
+    margin-top: 5%;
+    right: 12%;
+    width: 50%;
+}
+
 div#simulateur{
     position: absolute;
     top: 40.4%;
     opacity: 0;
+}
+
+img#simu{
+    position: relative;
+    left: 5%;
+    margin-top: 5%;
+    width: 20%;
 }
 
 p.projectSummary{
@@ -336,7 +356,7 @@ p.download{
     top: 80%;
     left: 34%;
     color: rgb(255, 251, 251);
-    z-index: 3;
+    z-index: 4;
 }
 
 p.download:hover{
