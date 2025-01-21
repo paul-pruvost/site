@@ -31,20 +31,28 @@ buttons.forEach(button => {
 const allId = ["me", "resume", "projects"];
 let currentId = "me";
 
+allId.slice(1, allId.length).forEach(section => {
+    let elt = document.getElementById(section)
+    elt.style.opacity = 0;
+    elt.style.transform = "translateX(100%) scale(0.5)";
+});
+
 const toggleVisibility = (nextId) => {
     allId.forEach(section => {
+        currentId = nextId;
         if (section !== currentId){
             const otherSection = document.getElementById(section);
             otherSection.style.opacity = 0;
+            otherSection.style.transition = "transform 1s ease, opacity 1s ease";
             otherSection.style.transform = "translateX(100%) scale(0.5)";
         }
         else{
             const thisSection = document.getElementById(section);
             thisSection.style.opacity = 1;
             thisSection.style.transform = "translateX(0%) scale(1)";
+            thisSection.style.transition = "transform 1s ease, opacity 1s ease";
         }
     });
-    currentId = nextId;
 };
 
 const aboutButton = document.getElementById("aboutButton");
@@ -54,20 +62,6 @@ const projectsButton = document.getElementById("projectButton");
 aboutButton.addEventListener("click", () => toggleVisibility("me"));
 resumeButton.addEventListener("click", () => toggleVisibility("resume"));
 projectsButton.addEventListener("click", () => toggleVisibility("projects"));
-
-// aboutButton.addEventListener("click", toggleVisibility("me"));
-// resumeButton.addEventListener("click", toggleVisibility("resume"));
-// projectsButton.addEventListener("click", toggleVisibility("projects"));
-
-allId.slice(1, allId.length).forEach(section => {
-    let elt = document.getElementById(section)
-    elt.style.opacity = 0;
-    elt.style.transform = "translateX(100%) scale(0.5)";
-});
-
-aboutButton.click();
-
-
 
 const allProjects = ["zombicide", "railroadDiv", "simulateur"];
 const nextButton = document.getElementById("nextButton");
