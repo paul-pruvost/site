@@ -29,21 +29,21 @@ buttons.forEach(button => {
 
 
 const allId = ["me", "resume", "projects"];
-let currentId = allId[0];
+let currentId = "me";
 
 const toggleVisibility = (nextId) => {
-    const nextSection = document.getElementById(nextId);
-    const currentSection = document.getElementById(currentId);
-
-    if (currentId !== nextId){
-        currentSection.style.opacity = 0;
-        currentSection.style.transition = "transform 1s ease, opacity 1s ease";
-        currentSection.style.transform = "translateX(100%) scale(0.5)";
-
-        nextSection.style.opacity = 1;
-        nextSection.style.transition = "transform 1s ease, opacity 1s ease";
-        nextSection.style.transform = "translateX(0%) scale(1)";
-    };
+    allId.forEach(section => {
+        if (section !== currentId){
+            const otherSection = document.getElementById(section);
+            otherSection.style.opacity = 0;
+            otherSection.style.transform = "translateX(100%) scale(0.5)";
+        }
+        else{
+            const thisSection = document.getElementById(section);
+            thisSection.style.opacity = 1;
+            thisSection.style.transform = "translateX(0%) scale(1)";
+        }
+    });
     currentId = nextId;
 };
 
@@ -51,21 +51,21 @@ const aboutButton = document.getElementById("aboutButton");
 const resumeButton = document.getElementById("resumeButton");
 const projectsButton = document.getElementById("projectButton");
 
-aboutButton.addEventListener("click", toggleVisibility("me"));
-resumeButton.addEventListener("click", toggleVisibility("resume"));
-projectsButton.addEventListener("click", toggleVisibility("projects"));
+aboutButton.addEventListener("click", () => toggleVisibility("me"));
+resumeButton.addEventListener("click", () => toggleVisibility("resume"));
+projectsButton.addEventListener("click", () => toggleVisibility("projects"));
 
 // aboutButton.addEventListener("click", toggleVisibility("me"));
 // resumeButton.addEventListener("click", toggleVisibility("resume"));
 // projectsButton.addEventListener("click", toggleVisibility("projects"));
 
-allId.slice(1, allId.length-1).forEach(section => {
+allId.slice(1, allId.length).forEach(section => {
     let elt = document.getElementById(section)
     elt.style.opacity = 0;
     elt.style.transform = "translateX(100%) scale(0.5)";
 });
 
-//aboutButton.click();
+aboutButton.click();
 
 
 
