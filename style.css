@@ -37,8 +37,7 @@ div#resume{
 
 div#projects{
     position: relative;
-    bottom: 118%;
-
+    bottom: 95%;
 }
 
 #container::before {
@@ -168,6 +167,7 @@ button{
     color: rgb(182, 182, 182);
     margin-right: 5%;
     margin-left: 5%;
+    z-index: 5;
 }
 
 button:hover{
@@ -247,17 +247,6 @@ p.textInterests{
     text-align: justify;
 }
 
-.experience, .skills {
-    background-color: rgba(85, 84, 84, 0.5);
-    margin: 10px;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.experience h3, .skills h3 {
-    color: rgb(245, 180, 2);
-}
-
 footer {
     background-color: #000;
     text-align: center;
@@ -272,31 +261,6 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-.resume-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-.resume-list li {
-    margin-bottom: 15px;
-}
-
-.sectionTitle {
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(245, 180, 2);
-    margin-bottom: 10px;
-}
-
-#resume ul {
-    padding-left: 20px;
-}
-
-#resume li strong {
-    color: rgb(245, 180, 2);
 }
 
 div#zombicide{
@@ -319,8 +283,8 @@ div.projet{
 button#nextButton{
     width: 10%;
     position: absolute;
-    top: 105%;
-    left: 83%;
+    top: 100%;
+    left: 80%;
     padding: 0.5%;
     border: 1px solid rgb(245, 180, 2);
     border-radius: 15px;
@@ -373,4 +337,60 @@ p.download{
 
 p.download:hover{
     color:white;
+}
+
+div.work{
+    display: inline-block;
+    position: relative;
+}
+
+div#degree{
+    left: 6%;
+}
+
+div#experience{
+    right: 3%;
+}
+
+.sousTitre {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.work-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.work {
+    flex: 1;
+}
+
+.resume-list {
+    list-style: none;
+    color: rgb(221, 221, 221);
+    padding: 0;
+}
+
+.resume-list li.professional {
+    margin-bottom: 4%;
+}
+
+.resume-list li.list {
+    margin-bottom: 4%;
+}
+
+.sectionTitle {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color:rgb(245, 180, 2);
+}
+
+li.details{
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+.details{
+    color:darkgray;
 }
