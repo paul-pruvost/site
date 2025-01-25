@@ -34,7 +34,7 @@ let currentId = "me";
 allId.slice(1, allId.length).forEach(section => {
     let elt = document.getElementById(section)
     elt.style.opacity = 0;
-    elt.style.transform = "translateX(100%) scale(0.5)";
+    elt.style.transform = "translateX(-200%) scale(0.4)";
 });
 
 const aboutButton = document.getElementById("aboutButton");
@@ -47,27 +47,46 @@ const allButtons = {"me":aboutButton, "resume":resumeButton, "projects":projects
 const toggleVisibility = (nextId) => {
     allId.forEach(section => {
         allButtons[section].disabled = true;
-        currentId = nextId;
-        if (section !== currentId){
-            const otherSection = document.getElementById(section);
-            otherSection.style.opacity = 0;
-            otherSection.style.transition = "transform 1s ease, opacity 1s ease";
-            otherSection.style.transform = "translateX(100%) scale(0.5)";
+        const currentSection = document.getElementById(currentId);
+        const nextSection = document.getElementById(nextId);
+
+        if (section === currentId) {
+            currentSection.style.transition = "transform 0.5s ease, opacity 0.25s ease";
+            currentSection.style.transform = "scale(0.4)";
+            
+            setTimeout(() => {
+                currentSection.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+                currentSection.style.transform = "scale(0.4) translateX(200%)";
+                currentSection.style.opacity = 0;
+            }, 500);
         }
-        else{
-            const thisSection = document.getElementById(section);
-            thisSection.style.opacity = 1;
-            thisSection.style.transform = "translateX(0%) scale(1)";
-            thisSection.style.transition = "transform 1s ease, opacity 1s ease";
+
+        if (section === nextId) {
+            nextSection.style.transition = "none";
+            nextSection.style.transform = "scale(0.4) translateX(-200%)";
+            nextSection.style.opacity = 0;
+
+            setTimeout(() => {
+                nextSection.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+                nextSection.style.transform = "scale(0.4) translateX(0%)";
+                nextSection.style.opacity = 1;
+
+                setTimeout(() => {
+                    nextSection.style.transition = "transform 0.5s ease";
+                    nextSection.style.transform = "scale(1)";
+                }, 500);
+            }, 800);
         }
     });
 
     setTimeout(() => {
+        currentId = nextId;
         allId.forEach(section => {
             allButtons[section].disabled = false;
         });
-    }, 1000);
+    }, 1250);
 };
+
 
 aboutButton.addEventListener("click", () => toggleVisibility("me"));
 resumeButton.addEventListener("click", () => toggleVisibility("resume"));
