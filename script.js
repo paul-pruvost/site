@@ -26,8 +26,6 @@ buttons.forEach(button => {
     });
 });
 
-
-
 const allId = ["me", "resume", "projects"];
 let currentId = "me";
 
@@ -45,6 +43,10 @@ const projectsButton = document.getElementById("projectButton");
 const allButtons = {"me":aboutButton, "resume":resumeButton, "projects":projectsButton};
 
 const toggleVisibility = (nextId) => {
+    if (currentId === nextId){
+        return;
+    }
+
     allId.forEach(section => {
         allButtons[section].disabled = true;
         const currentSection = document.getElementById(currentId);
@@ -84,7 +86,7 @@ const toggleVisibility = (nextId) => {
         allId.forEach(section => {
             allButtons[section].disabled = false;
         });
-    }, 1250);
+    }, 2000);
 };
 
 
