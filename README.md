@@ -1,5 +1,9 @@
 # Grominos.github.io
 
 # TODO
-- Resume section
-- Rafactoring css and js
+- Refactoring css and js
+
+## Later
+- change style of resume section
+- add another page
+- responsive ?
