@@ -268,8 +268,10 @@ div#zombicide{
 }
 
 img#zombicide{
+    position: relative;
     width: 25%;
     margin-top: 5%;
+    right: 5%;
 }
 
 div.projet{
@@ -300,7 +302,7 @@ div#railroadDiv{
 img#railroad{
     position: relative;
     margin-top: 5%;
-    right: 12%;
+    right: 15%;
     width: 50%;
 }
 
@@ -312,7 +314,7 @@ div#simulateur{
 
 img#simu{
     position: relative;
-    left: 5%;
+    right: 7%;
     margin-top: 5%;
     width: 20%;
 }
